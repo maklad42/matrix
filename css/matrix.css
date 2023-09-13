@@ -1,0 +1,77 @@
+:root {
+  --bkg: hsl(152, 36%, 60%);
+  --panel: hsl(0, 0%, 95%);
+  --controls: hsl(0, 0%, 75%);
+  --controls-border: hsl(152, 22%, 44%);
+  --last-char: hsl(180, 20%, 99%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family:'Courier New', Courier, monospace;
+  background-color: var(--bkg);
+}
+
+main {
+  width: 750px;
+  margin: auto;
+  height: 100vh;
+  overflow: auto;
+  font-size: 1.2rem;
+  background-color: var(--panel);
+}
+
+main h1 {
+  text-align: center;
+}
+
+main .controls {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: var(--controls);
+  border-top: 2px solid var(--controls-border);
+  border-bottom: 2px solid var(--controls-border);
+}
+
+main .screen {
+  width: 90%;
+  height: 28rem;
+  background-color: black;
+  margin: auto;
+  margin-top: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+main .matrix {
+  height: 100%;
+  color: rgb(55, 180, 55);
+  display: inline-block;
+  text-shadow: 3px 3px 5px hsl(152deg 100% 87.67% / 75%);
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  opacity: 1;
+  position: absolute;
+  transition: opacity .75s;
+}
+
+.matrix span {
+  display: inline-block;
+}
+
+.matrix span.reversed {
+  transform: rotateY(180deg);
+  position: relative;
+  left: 3px;
+}
+
+main .matrix span:last-child {
+  color: var(--last-char);
+}
+
+main .matrix.fadeout {
+  opacity: 0;
+  transition: opacity .75s;
+}
